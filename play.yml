@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Run shell
+      shell: df -h
+      register: out
+
+    - debug: var=out.stdout_lines
+
+    - name: run shell
+      shell: hostname
+      register: host
+
+    - debug: var=host.stdout_lines
