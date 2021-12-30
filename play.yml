@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: Run shell
-      shell: df -h
+      shell: uptime
       register: out
 
     - debug: var=out.stdout_lines
