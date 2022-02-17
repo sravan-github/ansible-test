@@ -1,13 +1,13 @@
 pipeline {
-    //agent any
-    /* */
+    agent any
+    /* 
     agent {
         docker { 
             image 'sravangcpdocker/terraform:7'
             args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
         }
     }
-    
+    */
     environment {
    ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
   }
