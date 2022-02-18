@@ -7,11 +7,11 @@ pipeline {
             args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
         }
     }
-    */
+    
     environment {
    ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
   }
-
+*/
     stages {
         stage('ansible') {
             steps {
