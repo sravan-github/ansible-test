@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: testplaybook
+  hosts: all
   become: yes
   gather_facts: no
   tasks:
