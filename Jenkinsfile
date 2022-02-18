@@ -21,8 +21,8 @@ pipeline {
                 sh 'ls -l && whoami'
                 //sh "cd ansible-test && chmod 777 play.yml && chmod 600 key && ls -ltr"
                 //sh 'cd ansible-test && ansible-galaxy collection install -r requirements.yml'
-                sh 'cd ansible-test && ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml'
-               // sh "cd ansible-test && ansible-playbook play.yml -i hosts --private-key key"
+                //sh 'cd ansible-test && ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml'
+                sh "cd ansible-test && ansible-playbook play.yml -i hosts --private-key key"
             }
         }
     }
