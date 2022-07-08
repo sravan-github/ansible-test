@@ -7,10 +7,10 @@ pipeline {
             args '-u root:root'
         }
     }
-    /*
+    
     environment {
    ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
-  } */
+  } 
     stages {
         stage('ansible') {
             steps {
@@ -21,7 +21,7 @@ pipeline {
                 sh 'ls -l && whoami'
                 //sh "cd ansible-test && chmod 777 play.yml && chmod 600 key && ls -ltr"
                 //sh 'cd ansible-test && ansible-galaxy collection install -r requirements.yml'
-                sh 'cd ansible-test && ansible-playbook -i hosts --private-key=$privatekey play.yml'
+                sh 'cd ansible-test && ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml'
                 //sh 'cd ansible-test && ansible-playbook -i hosts --private-key=key play.yml'
             }
         }
