@@ -1,6 +1,6 @@
 pipeline {
-   agent any
-  /*
+  // agent any
+  
     agent {
         docker { 
             image 'sravangcpdocker/terraform:7'
@@ -10,7 +10,7 @@ pipeline {
     
     environment {
    ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
-  } */
+  } 
     stages {
         stage('ansible') {
             steps {
