@@ -15,6 +15,7 @@ pipeline {
         stage('ansible') {
             steps {
                 sh "ansible --version"
+                sh "terraform --version"
                 //sh "rm -rf *"
                 sh "git clone https://github.com/sravan-github/ansible-test.git"
                 sh 'ls -l && whoami'
