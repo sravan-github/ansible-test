@@ -2,9 +2,9 @@ pipeline {
   // agent any
   
     agent {
-        any { 
+        docker { 
             image 'sravangcpdocker/terraform:7'
-            args '-u root:sudo -v $HOME/workspace/ansible-test:/ansible-test'
+            args '-u root:root'
         }
     }
     /*
