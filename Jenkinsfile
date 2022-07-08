@@ -2,7 +2,7 @@ pipeline {
   // agent any
   
     agent {
-        docker { 
+        any { 
             image 'sravangcpdocker/terraform:7'
             args '-u root:root'
         }
