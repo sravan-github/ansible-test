@@ -4,7 +4,6 @@ pipeline {
     agent {
         any { 
             image 'sravangcpdocker/terraform:7'
-            args '-u sudo:sudo -v $HOME'
         }
     }
     /*
@@ -15,6 +14,7 @@ pipeline {
         stage('ansible') {
             steps {
                 sh "ansible --version"
+                 sh "sudo chown root:jenkins /run/docker.sock"
                 //sh "rm -rf *"
                 sh "git clone https://github.com/sravan-github/ansible-test.git"
                 sh 'ls -l && whoami'
